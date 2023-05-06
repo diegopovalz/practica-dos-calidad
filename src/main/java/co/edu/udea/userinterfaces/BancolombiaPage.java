@@ -16,5 +16,5 @@ public class BancolombiaPage extends PageObject {
     public static final Target CALENDAR_MONTH_BUTTON = Target.the("Month button").locatedBy("//*[@id='mat-datepicker-0']/div/mat-year-view/table/tbody/tr[2]/td[3]");
     public static final Target CALENDAR_DAY_BUTTON = Target.the("Day button").locatedBy("//*[@id='mat-datepicker-0']/div/mat-month-view/table/tbody/tr[4]/td[5]");
     public static final Target SIMULATE_BUTTON = Target.the("Simulate button").locatedBy("//*[@id='boton-simular']");
-    public static final Target REQUEST_CREDIT_BUTTON = Target.the("Request credit button").locatedBy("//*[@id='visa-solicita-tarjeta-compras'][1]");
+    public static final Target RATES_AND_FEES_TEXT = Target.the("Rates and fees").locatedBy("//*[@id='mat-expansion-panel-header-1']/span[1]/mat-panel-title");
 }

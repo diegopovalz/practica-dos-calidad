@@ -4,15 +4,15 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 
-import static co.edu.udea.userinterfaces.BancolombiaPage.REQUEST_CREDIT_BUTTON;
+import static co.edu.udea.userinterfaces.BancolombiaPage.RATES_AND_FEES_TEXT;
 
 public class Validation implements Question<Boolean> {
 
-    private final String EXPECTED_CHARACTER = "SOLICITAR";
+    private final String EXPECTED_CHARACTER = "Tasas";
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        String validationText = Text.of(REQUEST_CREDIT_BUTTON).viewedBy(actor).asString();
+        String validationText = Text.of(RATES_AND_FEES_TEXT).viewedBy(actor).asString();
         return validationText.contains(EXPECTED_CHARACTER);
     }
 
