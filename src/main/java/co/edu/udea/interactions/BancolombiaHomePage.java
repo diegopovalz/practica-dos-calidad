@@ -24,10 +24,10 @@ public class BancolombiaHomePage implements Interaction {
 
         actor.attemptsTo(Click.on(YES_RADIO));
 
-        int randomAmount = (random.nextInt() * (500000000 - 1000000 + 1)) + 1000000;
+        int randomAmount = random.nextInt(499999001) + 1000000;
         actor.attemptsTo(Enter.theValue("" + randomAmount).into(AMOUNT_INPUT).thenHit(Keys.RETURN));
 
-        int randomMonths = (random.nextInt() * (84 - 48 + 1)) + 48;
+        int randomMonths = random.nextInt(37) + 48;
         actor.attemptsTo(Enter.theValue("" + randomMonths).into(MONTHS_INPUT).thenHit(Keys.RETURN));
 
         actor.attemptsTo(Click.on(CALENDAR_INPUT));

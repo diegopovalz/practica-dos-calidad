@@ -6,7 +6,7 @@ import net.serenitybdd.screenplay.targets.Target;
 public class BancolombiaPage extends PageObject {
 
     public static final Target KNOW_MORE_CREDIT_BUTTON = Target.the("Know more button").locatedBy("//*[@id='home-conoce-mas-productos']/div/div[2]/div[1]/div/div[2]/span/a");
-    public static final Target SIMULATE_CREDIT_BUTTON = Target.the("Simulate credit button").locatedBy("//*[@id='creditos']/div/div[1]/div[11]/div/div[2]/div/a[1]");
+    public static final Target SIMULATE_CREDIT_BUTTON = Target.the("Simulate credit button").locatedBy("//*[@id='creditos']/div/div[1]/div[11]/div/div[2]/div/a[1]/span/span");
     public static final Target CONTINUE_CREDIT_BUTTON = Target.the("Continue credit button").locatedBy("//*[@id='boton-seleccion-tarjeta']");
     public static final Target YES_RADIO = Target.the("Yes radio").locatedBy("//*[@id='opcion-si']");
     public static final Target AMOUNT_INPUT = Target.the("Amount input").locatedBy("//*[@id='valor-simulacion']");
