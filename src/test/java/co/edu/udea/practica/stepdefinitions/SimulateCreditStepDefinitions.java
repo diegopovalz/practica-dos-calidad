@@ -41,7 +41,7 @@ public class SimulateCreditStepDefinitions {
 
     @When("I go to the Credit Simulation option")
     public void iGoToTheCreditSimulationOption () {
-        client.attemptsTo(OpenThe.Browser(new BancolombiaPage()));
+        client.attemptsTo(OpenThe.Browser(new BancolombiaPage(), driver));
     }
 
     @Then("I can see the result of the simulation")

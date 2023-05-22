@@ -6,22 +6,25 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Open;
+import org.openqa.selenium.WebDriver;
 
 public class OpenThe implements Task {
 
     private PageObject page;
+    private WebDriver driver;
 
-    public OpenThe(PageObject page) {
+    public OpenThe(PageObject page, WebDriver driver) {
         this.page = page;
+        this.driver = driver;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Open.browserOn(page));
-        actor.attemptsTo(BancolombiaHomePage.go());
+        actor.attemptsTo(BancolombiaHomePage.go(driver));
     }
 
-    public static OpenThe Browser(PageObject page) {
-        return Tasks.instrumented(OpenThe.class, page);
+    public static OpenThe Browser(PageObject page, WebDriver driver) {
+        return Tasks.instrumented(OpenThe.class, page, driver);
     }
 }

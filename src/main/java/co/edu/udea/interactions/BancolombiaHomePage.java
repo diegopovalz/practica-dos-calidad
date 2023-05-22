@@ -5,17 +5,30 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.security.SecureRandom;
 
 import static co.edu.udea.userinterfaces.BancolombiaPage.*;
 
 public class BancolombiaHomePage implements Interaction {
+
+    private WebDriver driver;
+
+    public BancolombiaHomePage(WebDriver driver) {
+        this.driver = driver;
+    }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         SecureRandom random = new SecureRandom();
+        WebDriverWait wait = new WebDriverWait(driver, 40);
 
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("closeModalBtn")));
         actor.attemptsTo(Click.on(CLOSE_DISCOVER_MORE_BUTTON));
 
         actor.attemptsTo(Click.on(KNOW_MORE_CREDIT_BUTTON));
@@ -43,7 +56,7 @@ public class BancolombiaHomePage implements Interaction {
         actor.attemptsTo(Click.on(SIMULATE_BUTTON));
     }
 
-    public static BancolombiaHomePage go() {
-        return Tasks.instrumented(BancolombiaHomePage.class);
+    public static BancolombiaHomePage go(WebDriver driver) {
+        return Tasks.instrumented(BancolombiaHomePage.class, driver);
     }
 }
