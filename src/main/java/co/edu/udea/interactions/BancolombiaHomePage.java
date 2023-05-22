@@ -16,8 +16,6 @@ public class BancolombiaHomePage implements Interaction {
     public <T extends Actor> void performAs(T actor) {
         SecureRandom random = new SecureRandom();
 
-        actor.attemptsTo(Click.on(CLOSE_DISCOVER_MORE_BUTTON));
-
         actor.attemptsTo(Click.on(KNOW_MORE_CREDIT_BUTTON));
 
         actor.attemptsTo(Click.on(SIMULATE_CREDIT_BUTTON));
