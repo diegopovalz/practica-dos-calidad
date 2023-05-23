@@ -28,8 +28,8 @@ public class BancolombiaHomePage implements Interaction {
         SecureRandom random = new SecureRandom();
         WebDriverWait wait = new WebDriverWait(driver, 120);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"container-prehome\"]/div/div[1]/button")));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"container-prehome\"]/div/div[1]/button")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body[@id='content']/div[2]/div[@id='layoutContainers']/div[@class='wpthemeInner']/div[@class='wptheme1Col']/div[@class='component-container wpthemeLeft wpthemeCol ibmDndColumn wpthemeCol12of12 wpthemeFull wpthemePrimary id-Z7_U7URPIEM9PR62GAUKF3MU4AN43']/div[@class='component-control id-Z7_OHHGG4G0PGU0C06S3PCNGIHR85']/section[@class='ibmPortalControl wpthemeNoSkin a11yRegionTarget']/div[@class='wpthemeOverflowAuto']/div[@id='container-modal']/section[@id='container-prehome']/div[@class='row-modal-prehome']/div[@class='container-btn-close-prehome']/button[@id='closeModalBtn']")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body[@id='content']/div[2]/div[@id='layoutContainers']/div[@class='wpthemeInner']/div[@class='wptheme1Col']/div[@class='component-container wpthemeLeft wpthemeCol ibmDndColumn wpthemeCol12of12 wpthemeFull wpthemePrimary id-Z7_U7URPIEM9PR62GAUKF3MU4AN43']/div[@class='component-control id-Z7_OHHGG4G0PGU0C06S3PCNGIHR85']/section[@class='ibmPortalControl wpthemeNoSkin a11yRegionTarget']/div[@class='wpthemeOverflowAuto']/div[@id='container-modal']/section[@id='container-prehome']/div[@class='row-modal-prehome']/div[@class='container-btn-close-prehome']/button[@id='closeModalBtn']")));
         actor.attemptsTo(Click.on(CLOSE_DISCOVER_MORE_BUTTON));
 
         actor.attemptsTo(Click.on(KNOW_MORE_CREDIT_BUTTON));

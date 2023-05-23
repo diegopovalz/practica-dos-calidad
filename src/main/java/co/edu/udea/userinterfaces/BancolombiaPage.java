@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 public class BancolombiaPage extends PageObject {
 
     // public static final Target CLOSE_DISCOVER_MORE_BUTTON = Target.the("Discover more button").located(By.id("closeModalBtn"));
-    public static final Target CLOSE_DISCOVER_MORE_BUTTON = Target.the("Discover more button").locatedBy("//*[@id=\"container-prehome\"]/div/div[1]/button");
+    public static final Target CLOSE_DISCOVER_MORE_BUTTON = Target.the("Discover more button").locatedBy("/html/body[@id='content']/div[2]/div[@id='layoutContainers']/div[@class='wpthemeInner']/div[@class='wptheme1Col']/div[@class='component-container wpthemeLeft wpthemeCol ibmDndColumn wpthemeCol12of12 wpthemeFull wpthemePrimary id-Z7_U7URPIEM9PR62GAUKF3MU4AN43']/div[@class='component-control id-Z7_OHHGG4G0PGU0C06S3PCNGIHR85']/section[@class='ibmPortalControl wpthemeNoSkin a11yRegionTarget']/div[@class='wpthemeOverflowAuto']/div[@id='container-modal']/section[@id='container-prehome']/div[@class='row-modal-prehome']/div[@class='container-btn-close-prehome']/button[@id='closeModalBtn']");
     public static final Target KNOW_MORE_CREDIT_BUTTON = Target.the("Know more button").locatedBy("//*[@id='home-conoce-mas-productos']/div/div[2]/div[1]/div/div[2]/span/a");
     public static final Target SIMULATE_CREDIT_BUTTON = Target.the("Simulate credit button").locatedBy("//*[@id='creditos']/div/div[1]/div[11]/div/div[2]/div/a[1]/span/span");
     public static final Target CONTINUE_CREDIT_BUTTON = Target.the("Continue credit button").locatedBy("//*[@id='boton-seleccion-tarjeta']");
