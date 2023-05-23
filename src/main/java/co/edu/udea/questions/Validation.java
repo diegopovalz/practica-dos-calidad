@@ -12,7 +12,7 @@ public class Validation implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        String validationText = Text.of(RATES_AND_FEES_TEXT).viewedBy(actor).asString();
+        String validationText = actor.asksFor(Text.of(RATES_AND_FEES_TEXT).asString());
         return validationText.contains(EXPECTED_CHARACTER);
     }
 

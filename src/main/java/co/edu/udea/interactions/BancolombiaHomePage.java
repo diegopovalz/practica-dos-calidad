@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.security.SecureRandom;
+import java.time.Duration;
 
 import static co.edu.udea.userinterfaces.BancolombiaPage.*;
 
@@ -26,7 +27,7 @@ public class BancolombiaHomePage implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         SecureRandom random = new SecureRandom();
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='closeModalBtn']"))).click();
 

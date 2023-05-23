@@ -24,8 +24,8 @@ repositories {
 }
 
 ext {
-    serenityVersion = '1.9.45'
-    cucumberVersion = '1.9.51'
+    serenityVersion = '3.6.12'
+    cucumberVersion = '3.6.12'
 }
 
 dependencies {
