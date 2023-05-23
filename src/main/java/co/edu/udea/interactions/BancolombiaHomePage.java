@@ -28,7 +28,8 @@ public class BancolombiaHomePage implements Interaction {
         SecureRandom random = new SecureRandom();
         WebDriverWait wait = new WebDriverWait(driver, 120);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"closeModalBtn\"]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"container-prehome\"]/div/div[1]/button")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"container-prehome\"]/div/div[1]/button")));
         actor.attemptsTo(Click.on(CLOSE_DISCOVER_MORE_BUTTON));
 
         actor.attemptsTo(Click.on(KNOW_MORE_CREDIT_BUTTON));
