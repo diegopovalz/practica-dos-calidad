@@ -13,6 +13,7 @@ public class Validation implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         String validationText = actor.asksFor(Text.of(RATES_AND_FEES_TEXT).asString());
+        System.out.println(String.format("Result: %s", validationText));
         return validationText.contains(EXPECTED_CHARACTER);
     }
 
