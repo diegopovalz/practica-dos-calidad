@@ -5,6 +5,7 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.thucydides.core.webdriver.javascript.JavascriptExecutorFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -29,6 +30,13 @@ public class BancolombiaHomePage implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         SecureRandom random = new SecureRandom();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        JavascriptExecutorFacade js = new JavascriptExecutorFacade(driver);
+        js.executeScript("window.localStorage.setItem(\"ShowPrehome\", false)");
+
+        driver.navigate().refresh();
 
         actor.attemptsTo(Click.on(KNOW_MORE_CREDIT_BUTTON));
 
