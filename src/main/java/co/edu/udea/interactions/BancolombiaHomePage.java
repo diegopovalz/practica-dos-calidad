@@ -44,7 +44,10 @@ public class BancolombiaHomePage implements Interaction {
         try {
             actor.attemptsTo(Click.on(KNOW_MORE_CREDIT_BUTTON));
         } catch (ElementClickInterceptedException e) {
-           WebElement closeButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='closeModalBtn']/span"))).click();
+           WebElement closeButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='closeModalBtn']/span")));
+           if (closeButton != null) {
+               closeButton.click();
+           }
            actor.attemptsTo(Click.on(KNOW_MORE_CREDIT_BUTTON));
         }
 
