@@ -30,7 +30,7 @@ public class BancolombiaHomePage implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         SecureRandom random = new SecureRandom();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
 
         try {
              WebElement closeButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='closeModalBtn']/span")));
@@ -41,15 +41,7 @@ public class BancolombiaHomePage implements Interaction {
             System.out.println("El botón no se hizo cliqueable dentro del tiempo límite.");
         }
 
-        try {
-            actor.attemptsTo(Click.on(KNOW_MORE_CREDIT_BUTTON));
-        } catch (ElementClickInterceptedException e) {
-           WebElement closeButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='closeModalBtn']/span")));
-           if (closeButton != null) {
-               closeButton.click();
-           }
-           actor.attemptsTo(Click.on(KNOW_MORE_CREDIT_BUTTON));
-        }
+        actor.attemptsTo(Click.on(KNOW_MORE_CREDIT_BUTTON));
 
         actor.attemptsTo(Click.on(SIMULATE_CREDIT_BUTTON));
 
