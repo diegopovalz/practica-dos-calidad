@@ -34,7 +34,7 @@ public class BancolombiaHomePage implements Interaction {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         JavascriptExecutorFacade js = new JavascriptExecutorFacade(driver);
-        js.executeScript("window.localStorage.setItem(\"ShowPrehome\", false)");
+        js.executeScript("window.localStorage.setItem(\"ShowPrehome\", true)");
 
         driver.navigate().refresh();
 
