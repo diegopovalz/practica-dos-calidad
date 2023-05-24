@@ -12,6 +12,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.JavascriptExecutor;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -25,6 +26,8 @@ public class SimulateCreditStepDefinitions {
 
     @Before
     public void setup() {
+       JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+       jsExecutor.executeScript("localStorage.setItem('ShowPrehome', 'true');");
         driver.manage().window().maximize();
         client.can(BrowseTheWeb.with(driver));
     }

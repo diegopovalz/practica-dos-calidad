@@ -13,7 +13,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.JavascriptExecutor;
 import java.security.SecureRandom;
 import java.time.Duration;
 
@@ -30,8 +29,6 @@ public class BancolombiaHomePage implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         SecureRandom random = new SecureRandom();
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("localStorage.setItem('ShowPrehome', 'true');");
 
         actor.attemptsTo(Click.on(KNOW_MORE_CREDIT_BUTTON));
 
