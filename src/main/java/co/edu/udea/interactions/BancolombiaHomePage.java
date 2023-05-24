@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.ElementClickInterceptedException;
-
+import org.openqa.selenium.JavascriptExecutor;
 import java.security.SecureRandom;
 import java.time.Duration;
 
@@ -30,16 +30,8 @@ public class BancolombiaHomePage implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         SecureRandom random = new SecureRandom();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
-
-        try {
-             WebElement closeButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='closeModalBtn']/span")));
-           if (closeButton != null) {
-               closeButton.click();
-           }
-        } catch (TimeoutException e) {
-            System.out.println("El botón no se hizo cliqueable dentro del tiempo límite.");
-        }
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("localStorage.setItem('ShowPrehome', 'true');");
 
         actor.attemptsTo(Click.on(KNOW_MORE_CREDIT_BUTTON));
 
