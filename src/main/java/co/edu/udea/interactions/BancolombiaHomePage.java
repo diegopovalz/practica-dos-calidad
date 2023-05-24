@@ -9,8 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.security.SecureRandom;
@@ -29,10 +29,16 @@ public class BancolombiaHomePage implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         SecureRandom random = new SecureRandom();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='closeModalBtn']")));
-        if (element != null && element.isEnabled() && element.isDisplayed()) element.click();
+        try {
+             WebElement closeButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='closeModalBtn']/span")));
+           if (closeButton != null) {
+               closeButton.click();
+           }
+        } catch (TimeoutException e) {
+            System.out.println("El botón no se hizo cliqueable dentro del tiempo límite.");
+        }
 
         actor.attemptsTo(Click.on(KNOW_MORE_CREDIT_BUTTON));
 
